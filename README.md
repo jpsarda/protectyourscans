@@ -30,5 +30,7 @@ options:
                         Epaisseur de la ligne de fond, defaut 5
   -lc LINECOLOR, --linecolor LINECOLOR
                         Couleur de la ligne de fond, defaut red
+```
 
-[Document non watermarké](https://github.com/jpsarda/protectyourscans/blob/main/fake_document.jpg)
+![Document non watermarké](fake_document.jpg)
+![Document watermarké](fake_document_watermarked.jpg)
