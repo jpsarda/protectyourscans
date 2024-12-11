@@ -97,8 +97,9 @@ def add_watermark(input_image_path, output_image_path, watermark_text, font_size
 
     # Définir la couleur du texte (en utilisant RGBA pour transparence)
     #text_color = (255, 255, 255, 255)  # Blanc 
-    #text_color = (200, 200, 200, 255)  
-    #text_color = "#faaa"
+    #text_color = (200, 200, 200, 1)  
+    #text_color = "#faa1"
+    #print(text_color)
     
     # Choisir une police et une taille pour le texte
     font = ImageFont.truetype(script_path+"/THEBOLDFONT-FREEVERSION-2023.ttf", font_size)  # Vous pouvez remplacer par une police spécifique
@@ -248,10 +249,11 @@ def main():
 
     default_lineoffset = 75;
     default_angle = 70;
-    default_textcolor = "#aaaf"
-    default_backgroundcolor = "#0008"
-    default_linecolor = "red"
-    default_linewidth = 5
+    # color is #rgba (a is transparency, 0 for translucid, f opaque)
+    default_textcolor = "#aaa8"
+    default_backgroundcolor = "#0004"
+    default_linecolor = "#f00"
+    default_linewidth = 1
     
     # Ajouter les arguments
     parser.add_argument("input", help="Chemin de l'image d'entrée")
@@ -264,7 +266,7 @@ def main():
     parser.add_argument("-c","--textcolor", type=str, default=default_textcolor, help="Couleur du texte, defaut "+str(default_textcolor))
     parser.add_argument("-bc","--backgroundcolor", type=str, default=default_backgroundcolor, help="Couleur du background du texte, defaut "+str(default_backgroundcolor))
     parser.add_argument("-lw","--linewidth", type=int, default=default_linewidth, help="Epaisseur de la ligne de fond, defaut "+str(default_linewidth))
-    parser.add_argument("-lc","--linecolor", type=str, default=default_linecolor, help="Couleur de la ligne de fond, defaut "+str(default_linecolor))
+    parser.add_argument("-lc","--linecolor", type=str, default=default_linecolor, help="Couleur de la ligne de fond, toujours opaque, ne prend pas en compte la transparence, defaut "+str(default_linecolor))
     
     
     # Analyser les arguments de la ligne de commande
